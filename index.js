@@ -25486,7 +25486,15 @@ function BeeSwarmSimulator(DATA){
         out.flowerIn={}
         out._flowerIn={}
         out.pollen=0
-        out.honey=0
+        out.honey = 0;
+
+        window.setHoneyFromEditor = function () {
+            const input = document.getElementById("honeyEditorAmount");
+            const amount = Math.floor(Number(input.value));
+        
+            out.honey = Number.isFinite(amount) ? Math.max(0, amount) : 0;
+            out.updateUI();
+        };
         
         out.cameraRaycastPoint=new CANNON.Vec3()
         out.cameraRaycastResult=new CANNON.RaycastResult()
