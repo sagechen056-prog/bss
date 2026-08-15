@@ -33885,8 +33885,13 @@ function BeeSwarmSimulator(DATA){
         }
     }
 
-    function SAVE_GAME(){
 
+        player.honey = Number.MAX_SAFE_INTEGER
+            player.updateUI()
+                function SAVE_GAME(){
+
+       
+        
         let code=GENERATE_SAVE_CODE()
 
         //eeeeeeeeeeeeeeeeeeeeeeeeee
